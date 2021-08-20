@@ -1,7 +1,10 @@
-import React, { Component } from "react"
+import React from "react"
 import App from "./App"
 
 
 class Names extends Component {
+    Component() {
+        super()
+    }
 
 }

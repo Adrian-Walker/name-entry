@@ -5,6 +5,9 @@ import App from "./App"
 class Names extends Component {
     Component() {
         super()
+        this.state = {
+            name: " "
+        }
     }
 
 }

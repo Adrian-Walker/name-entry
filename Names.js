@@ -10,18 +10,19 @@ class Names extends Component {
         }
     }
 
+    const
+
     render() {
         return (
             <div>
-                <input></input>
-                <h1></h1>
-                <ol>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ol>
-                <button onClick>Add</button>
+                <form>
+                    <input
+                        type="text"
+                        value="name"
+                        placeholder="Enter Name Here"
+
+                    />
+                </form>
             </div>
         )
     }

@@ -1,6 +1,7 @@
-import { render } from "@testing-library/react"
-import React from "react"
-import Names from "./Names";
+import React, { Component } from "react"
+// import Names from "./Names";
+
+
 
 class App extends Component {
     constructor() {
@@ -10,16 +11,23 @@ class App extends Component {
         }
     }
 
+    
+
     render() {
         return (
             <div>
-                <Names />
+                <form>
+                    <input
+                        type="text"
+                        value=""
+                        placeholder="Enter Name Here"
+
+                    />
+                </form>
             </div>
-        );
+        )
     }
 
 }
-
-
 
 export default App

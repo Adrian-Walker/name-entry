@@ -9,9 +9,15 @@ class App extends Component {
         this.state = {
             name: " "
         }
+        this.handleChange = this.handleChange.bind(this)
     }
 
-    
+    handleChange(event) {
+        const { name, value } = event.target
+        this.setState({
+            [name]: value
+        })
+    }
 
     render() {
         return (
@@ -21,8 +27,9 @@ class App extends Component {
                         type="text"
                         value=""
                         placeholder="Enter Name Here"
-
+                        onChange={this.handleChange}
                     />
+                    <h1>{this.state.name}</h1>
                 </form>
             </div>
         )

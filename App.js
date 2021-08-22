@@ -25,7 +25,7 @@ class App extends Component {
                 <form>
                     <input
                         type="text"
-                        value=""
+                        value={this.state.name}
                         placeholder="Enter Name Here"
                         onChange={this.handleChange}
                     />

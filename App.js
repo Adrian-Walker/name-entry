@@ -7,28 +7,33 @@ class App extends Component {
     constructor() {
         super()
         this.state = {
-            name: ""
+            name: "",
+            nameList: []
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleSubmit(event) {
-        const { name, value } = event.target
-        this.setState({
-            [name]: value
-        })
         event.preventDefault()
+        this.setState(prevState => {
+            return {
+                nameList: [...prevState.nameList, prevState.name],
+                name: ""
+            }
+        })
+
     }
     handleChange(event) {
+        event.preventDefault()
         const { name, value } = event.target
         this.setState({
             [name]: value
         })
-        event.preventDefault()
     }
 
     render() {
+        const newPeople = this.state.nameList.map(person => <li>{person}</li>)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -40,11 +45,7 @@ class App extends Component {
                         onChange={this.handleChange}
                     />
                     <ol>
-
-                        <li>
-                            <h1>{this.state.name}</h1>
-                        </li>
-
+                        {newPeople}
                     </ol>
                     <button>Add Name</button>
                 </form>
